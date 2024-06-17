@@ -33,7 +33,7 @@ With a single endpoint, data fetching is easier because you don't need to make r
 
 The request specifies precisely the data that’s going to be returned
 
-Let's compare a case where we need to check the length of a specific element in a specific version of a specific design.
+Let's compare a case where we need to check the length of a specific element in a specific version of a given design.
 
 With the MFG Data Model GraphQL endpoint, the query looks like this:
 

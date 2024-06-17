@@ -8,9 +8,9 @@ permalink: /explorer/home/
 
 # Explorer and First Queries
 
-Now that you're in good shape to use the AEC Data Model API, we can start experimenting with the queries and the explorer to get more comfortable with this new service.
+Now that you're in good shape to use the MFG Data Model API, we can start experimenting with the queries and the explorer to get more comfortable with this new service.
 
-In this section, we'll introduce you to the interface that will help you explore your design data, focusing mainly on the API. As said before, we don't want you to worry about frameworks, coding, and cloud providers. We can keep it simple using the [explorer](https://aecdatamodel-explorer.autodesk.io).
+In this section, we'll introduce you to the interface that will help you explore your design data, focusing mainly on the API. As said before, we don't want you to worry about frameworks, coding, and cloud providers. We can keep it simple using the [explorer](https://mfgdatamodel-explorer.autodesk.io).
 
 The explorer's UI was built to be simple and intuitive. We'll use it mostly to perform our queries by passing the payload and checking the response, just like in the image below:
 
@@ -20,19 +20,23 @@ The explorer's UI was built to be simple and intuitive. We'll use it mostly to p
 
 It also comes with multiple functionalities to check the history of queries, format queries, configure themes and shortcuts, and a button to display the queries available with the API. This last option is the first one we'll go through, as it provides us access to our API schema. This will be our entry point. We'll start our journey by getting familiar with the AEC Data Model API schema.
 
-## AEC Data Model Schema
+## MFG Data Model Schema
 
 As described at [graphql.org](https://graphql.org/learn/schema/):
 
 > _"Every GraphQL service defines a set of types which completely describe the set of possible data you can query on that service. Then, when queries come in, they are validated and executed against that schema."_
 
-Our API has a schema suitable to address the common data from the AEC industry. It's composed of the 5 constructs described below:
+Our API has a schema suitable to address the common data from the MFG industry. It's composed of the 5 constructs described below:
 
-- **Design**: A Design is a part of an AEC project that contains elements. Note that “Model” is sometimes used interchangeably with “Design”.
-- **Elements**: An Element is a building block of AEC design data. It represents an individual piece of an AEC design such as a wall, window, or door without enforcing a rigid definition. The absence of a rigid definition allows the Element to be flexible to adapt to the different requirements of an AEC design, now and in the future. The data contained in an Element gives it context by using Classification, Property, and Property Definition.
-- **Reference Property**: A reference property describes the relationship between elements.
-- **Property**: A Property is a well-defined granular piece of data that describes the Element. For example: Revit parameters and their values like area, volume, length, etc.
-- **Property Definition**: A Property Definition provides detailed information about a Property. It contains metadata that gives context to the Property. For example: Unit, type, etc.
+- **DesignItem**: Represents an item that contains a product design. You coudl think of it as the file in your project.
+- **DesignItemVersion**: A specific version of a design.
+- **Component**: Component is the way you can organize your model into parts. Each design has a root component, and each component can have multiple sub-components. 
+- **ComponentVersion**: A specific version of a component.
+- **Occurrence**: An instance of a component inside another component.
+- **Properties**: Custom properties of a ComponentVersion. 
+- **PhysicalProperties**: Physical properties of a ComponentVersion: area, volume, density, mass and bounnding box.
+- **Derivatives**: Export file formats that can be requested for a ComponentVersion: STEP, STL or OBJ.
+- **ManagePropertiesOnVersion**: Lifecycle information related to the ComponentVersion: itemNuber, lifeCycle, etc. 
 
 ### Explorer Docs
 
@@ -46,24 +50,12 @@ The first query we used in the previous section returned to us a list of hubs. A
 
 ### GraphQL Voyager
 
-> There's also another great tool to explore GraphQL API's schemas:
-> The [GraphQL Voyager](https://graphql-kit.com/graphql-voyager/)
+> There's also another great tool to explore GraphQL API schemas:
+> The [GraphQL Voyager](https://mfgdatamodel-explorer.autodesk.io/voyager)
 
-To try this tool, you just need to go through the three steps below:
+![Voyager](../assets/images/voyager.png)
 
-- Go to the Voyager page, click on change the schema, and copy the introspection query
-
-![Copy the introspection](../assets/images/copyintrospection.gif)
-
-- Paste and run the query in the AEC Data Model Explorer
-
-![Run the introspection](../assets/images/runintrospection.gif)
-
-- Copy the response, paste it back in the Voyager app and click in the `DISPLAY` button
-
-![Copy the response](../assets/images/copyresponse.gif)
-
-With that you will be able to inspect all the available queries and constructs from AEC Data Model API.
+With that you will be able to inspect all the available queries and constructs from MFG Data Model API.
 
 > _Keep one tab with the schema open for further exploration throughout this tutorial ;)_
 
@@ -71,7 +63,7 @@ Now that we know the schema's importance and know how to view it using the explo
 
 ## First Queries
 
-We suppose that you're familiar with how the data is organized in the context of ACC hubs but if not, here is a quick overview:
+We suppose that you're familiar with how the data is organized in the context of Fusion hubs but if not, here is a quick overview:
 
 At the top level, there are the hubs.
 Inside each hub, there are the projects.
@@ -89,12 +81,9 @@ The query to retrieve the hubs is quite simple and it is available in the first 
 
 ![GET hubs](../assets/images/gethubs.gif)
 
-Now make sure you can see the hub you used to join the AEC Data Model beta listed in the response and move to the next query.
-
-This tutorial will move to the next steps using the hub named `AEC DM Developer Advocacy Support`.
 In the next query, you'll need to use your hub id as input.
 
-> _This id is the same one used by other APS APIs (ACC and Data Management) to point to hubs._
+> _This id is the same one used by other APS APIs (e.g. Data Management) to point to hubs._
 
 ### Step 2 - Listing the projects
 
@@ -104,9 +93,7 @@ Go ahead and copy the id of the hub you're using, move to the `GetProjects` pane
 
 ![GET projects](../assets/images/getprojects.gif)
 
-Now you'll need to find the project that hosts your Revit 2024 designs for this tutorial.
-
-This tutorial uses the project `AEC DM Bootcamp Project`, which is already visible on the first page of the response.
+Now you'll need to find the project that hosts your Fusion designs for this tutorial.
 
 The GetProjects query available in the explorer, as is, requires you to paste the `hub id` as a string argument, but you can also asign that using the Variables.
 
@@ -171,7 +158,7 @@ query GetProjects ($hubId:ID!, $projectName:String!) {
 }
 ```
 
-The next query requires a project id, and AEC Data Model API works with its unique value for the project id. That's why it exposes the usual project id inside the `alternativeRepresentations` field.
+The next query requires a project id, and MFG Data Model API works with its unique value for the project id. That's why it exposes the usual project id inside the `alternativeRepresentations` field.
 We are not going to use the alternative representation for the projects in this tutorial but is always good to know how to retrieve it. You'll need it if you want to connect with ACC APIs or Data Management APIs, for instance.
 
 ### Step 3 - Listing Designs
