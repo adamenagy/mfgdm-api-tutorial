@@ -16,9 +16,7 @@ In this tutorial, we'll cover the first steps in your journey with the MFG Data 
 
 Once we get that covered, we'll run from basic queries to more advanced ones, always using the explorer, just like in the image below.
 
-![sample queries](./assets/images/samplequery.gif)
-
-<!-- ![sample queries](./assets/images/samplequery.gif) -->
+![sample queries](./assets/images/getproperties.png)
 
 Don't worry if you're not a full-stack web developer. You won't need that level of expertise to follow up on this tutorial (although it's required to connect with one to build your own app leveraging our APIs).
 

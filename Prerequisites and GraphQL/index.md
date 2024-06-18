@@ -16,7 +16,7 @@ Although the scope of this tutorial is just reading data, we recommend that you 
 
 2. If you don't have any good Fusion designs to test things with, you can open and save the [sample models](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-access-samples-files-for-Fusion-360-tutorials.html) in your project using “File” -> “Save As” inside Fusion.
 
-   ![translation diagram](../assets/images/translationdiagram.png)
+   ![translation diagram](../assets/images/samples.jpeg)
 
 Now let's cover a quick introduction on GraphQL.
 

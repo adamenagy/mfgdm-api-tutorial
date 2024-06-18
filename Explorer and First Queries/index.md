@@ -18,7 +18,7 @@ The explorer's UI was built to be simple and intuitive. We'll use it mostly to p
 
 > _The explorer is built on top of the [graphiql](https://github.com/graphql/graphiql) project! If you want additional details on this project, feel free to check its documentation ;)_
 
-It also comes with multiple functionalities to check the history of queries, format queries, configure themes and shortcuts, and a button to display the queries available with the API. This last option is the first one we'll go through, as it provides us access to our API schema. This will be our entry point. We'll start our journey by getting familiar with the AEC Data Model API schema.
+It also comes with multiple functionalities to check the history of queries, format queries, configure themes and shortcuts, and a button to display the queries available with the API. This last option is the first one we'll go through, as it provides us access to our API schema. This will be our entry point. We'll start our journey by getting familiar with the MFG Data Model API schema.
 
 ## MFG Data Model Schema
 
@@ -36,7 +36,7 @@ Our API has a schema suitable to address the common data from the MFG industry. 
 - **Properties**: Custom properties of a ComponentVersion. 
 - **PhysicalProperties**: Physical properties of a ComponentVersion: area, volume, density, mass and bounnding box.
 - **Derivatives**: Export file formats that can be requested for a ComponentVersion: STEP, STL or OBJ.
-- **ManagePropertiesOnVersion**: Lifecycle information related to the ComponentVersion: itemNuber, lifeCycle, etc. 
+- **ManagePropertiesOnVersion**: Lifecycle information related to the ComponentVersion: itemNumber, lifeCycle, etc. 
 
 ### Explorer Docs
 
