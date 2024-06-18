@@ -31,8 +31,8 @@ Now you've covered many possible scenarios enabled by AEC Data Model API.
 From now you have more than enough to start experimenting with your custom workflows on your designs.
 We also have a few samples with live demos and source code available for you to leverage.
 
-[MFG Data Model Explorer source code](https://github.com/autodesk-platform-services/aps-aecdatamodel-explorer)
+[MFG Data Model Explorer source code](https://github.com/autodesk-platform-services/aps-data-explorer)
 
-[AEC Data Model Code Samples source code](https://github.com/autodesk-platform-services/aps-aecdatamodel-samples)
+[MFG Data Model Code Samples source code](https://github.com/autodesk-platform-services/aps-fusion-data-samples/tree/beta)
 
-[AEC Data Model Dashboards source code](https://github.com/autodesk-platform-services/aps-aecdatamodel-dashboards)
+[MFG Data Model Demo source code](https://github.com/autodesk-platform-services/aps-mfgdatamodel-demo)
