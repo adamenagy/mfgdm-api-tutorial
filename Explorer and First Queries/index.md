@@ -14,7 +14,7 @@ In this section, we'll introduce you to the interface that will help you explore
 
 The explorer's UI was built to be simple and intuitive. We'll use it mostly to perform our queries by passing the payload and checking the response, just like in the image below:
 
-![Explorer UI](../assets/images/explorerui.png)
+![Explorer UI](/assets/images/explorerui.png)
 
 > _The explorer is built on top of the [graphiql](https://github.com/graphql/graphiql) project! If you want additional details on this project, feel free to check its documentation ;)_
 
@@ -44,7 +44,7 @@ Now let's use the explorer to view our schema.
 
 Log in with your Autodesk account, then click on the Docs button and scroll down to access the queries available in the MFG Data Model's schema.
 
-![Schema through explorer](../assets/images/schema.gif)
+![Schema through explorer](/assets/images/schema.gif)
 
 The first query we used in the previous section returned to us a list of hubs. According to this documentation we could, for instance, use a filter to retrieve only the hubs matching certain conditions. Exploring the schema gives us a better idea about the capabilities of the API. If you scroll down you'll see a list with all the queries available including the parameters that can be passed to compose the responses.
 
@@ -53,7 +53,7 @@ The first query we used in the previous section returned to us a list of hubs. A
 > There's also another great tool to explore GraphQL API schemas:
 > The [GraphQL Voyager](https://mfgdatamodel-explorer.autodesk.io/voyager)
 
-![Voyager](../assets/images/voyager.png)
+![Voyager](/assets/images/voyager.png)
 
 With that you will be able to inspect all the available queries and constructs from MFG Data Model API.
 
@@ -71,7 +71,7 @@ Inside a project, there are multiple folders.
 Inside a folder, there can be other folders or items.
 Lastly, an item can have multiple versions.
 
-![Fusion Team hierarchy](../assets/images/hierarchy.png)
+![Fusion Team hierarchy](/assets/images/hierarchy.png)
 
 Let's traverse this structure through our queries in 4 steps:
 
@@ -79,7 +79,7 @@ Let's traverse this structure through our queries in 4 steps:
 
 The query to retrieve the hubs is quite simple and it is available in the first pane of the explorer. To list the hubs available you just need to click in the first panel of the explorer and then run the query, like the image below:
 
-![GET hubs](../assets/images/gethubs.png)
+![GET hubs](/assets/images/gethubs.png)
 
 In the next query, you'll need to use your hub id as input.
 
@@ -91,7 +91,7 @@ Following the hierarchy, we're going to list all of the projects available insid
 
 Go ahead and copy the id of the hub you're using, move to the `GetProjects` pane, and paste the id in the proper field, just like in the image below:
 
-![GET projects](../assets/images/getprojects.png)
+![GET projects](/assets/images/getprojects.png)
 
 Now you'll need to find the project that hosts your Fusion designs for this tutorial.
 
@@ -130,7 +130,7 @@ In case your hub has many projects making the one you need to use missing from t
 
 For that you can filter the projects by name, passing the name of your project like the gif below:
 
-![GET projects](../assets/images/getprojectsfilter.gif)
+![GET projects](/assets/images/getprojectsfilter.gif)
 
 For simplicity, you can just copy and paste the query below if needed (replacing it with your project name and hub id) ;)
 
@@ -172,7 +172,7 @@ Obviously, by limiting the container the response is more precise, avoiding the 
 In this step we'll focus on listing all the designs available in one specific project, using the desired project id.
 For that, we just need to copy the project id from the previous step response, move to the `GetDesignsByProject` pane, and paste the project id into the `GetDesignsByProject` query. Just like in the gif below:
 
-![GET Designs](../assets/images/getdesigns.gif)
+![GET Designs](/assets/images/getdesigns.gif)
 
 The response for this request will only list **AEC Designs** generated from the Revit 2024 files uploaded in your hub. Since we're using a small set of files, there's no need to go through pagination.
 
@@ -184,7 +184,7 @@ Before moving to the next query, we need to load the `Snowdon Towers Sample Faca
 
 This is quite simple to achieve ;), you just need to copy and paste the version id (available in the field `fileVersionUrn` inside the alternativeRepresentations) in the second input from the page's header and flick the switch to turn on the Viewer. Just like in the gif below:
 
-![Load Viewer](../assets/images/loadviewer.gif)
+![Load Viewer](/assets/images/loadviewer.gif)
 
 ### Step 4 - Listing Elements
 
@@ -192,7 +192,7 @@ Now we can explore the components from our designs. In the last query of this se
 
 Copy the design id from the `Snowdon Towers Sample Facades` available in the previous response and pass it to the `GetElementsFromCategory` query, just like in the gif below.
 
-![Get Elements](../assets/images/getelements.gif)
+![Get Elements](/assets/images/getelements.gif)
 
 This query lists all the elements based on their **category**. The filter applied:
 
@@ -221,7 +221,7 @@ By default, the **Elements** query is limited to listing only the first 50 eleme
 So let's improve our response by tweaking it a little bit.
 We can change the default limit, returning to us the first 100 elements instead of only 50. We can also filter a bit more to return only the **instances**. In the current response, there are both types and instances. Since we're more interested in the latter for viewing, let's filter our response to only list instances.
 
-![Improving elements query](../assets/images/getelementsimproved.gif)
+![Improving elements query](/assets/images/getelementsimproved.gif)
 
 The query will be just like the one below:
 
