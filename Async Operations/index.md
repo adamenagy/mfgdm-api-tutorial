@@ -13,6 +13,8 @@ You can easily spot such fields in the API because they will have a property cal
 
 ## Thumbnail
 
+When using the Model Derivative API to get back a thumbail for a model, that can only be done at file level. In the case of MFGDM API we can do that for subcomponents as well
+
 ```js
 query GetComponentVersion($componentVersionId: ID!) {
     componentVersion(componentVersionId: $componentVersionId) {
@@ -42,7 +44,6 @@ query GetComponentVersion($componentVersionId: ID!) {
 ## Physical Properties
 
 
-When using the Model Derivative API to get back a thumbail for a model, that can only be done at file level. Inn the case of MFGDM API we can do that for subcomponents as well
 
 ![Viewer Connection Process](/mfgdm-api-tutorial/assets/images/viewerconnectionprocess.png)
 
