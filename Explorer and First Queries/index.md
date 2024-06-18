@@ -166,118 +166,11 @@ We are not going to use the alternative representation for the projects in this 
 Usually inside a project, we have a complete structure of folders separating files according to project phase, disciplines, teams, etc...
 You might be used to traverse this folder structure to reach your items level, but that isn't necessary when we use MFG Data Model API.
 
-There are queries that list designs from a project and even from a hub.
-Obviously, by limiting the container the response is more precise, avoiding the need to go through multiple pages or filtering.
 
-In this step we'll focus on listing all the designs available in one specific project, using the desired project id.
-For that, we just need to copy the project id from the previous step response, move to the `GetDesignsByProject` pane, and paste the project id into the `GetDesignsByProject` query. Just like in the gif below:
 
-![GET Designs](/mfgdm-api-tutorial/assets/images/getdesigns.gif)
 
-The response for this request will only list **AEC Designs** generated from the Revit 2024 files uploaded in your hub. Since we're using a small set of files, there's no need to go through pagination.
 
-> _Feeling comfortable with GraphQL already? Why don't you try changing this query to use variables insted of "hardcoded" arguments? ;)_
-
-If you notice the response for one specific design, you'll see that it contains the `alternativeRepresentations` field. In this case, we are retrieving both **item Id** and **version Id**. We'll use the **version Id** to load the derivative for this design with Viewer while the `id` returned in the response is used in the next query.
-
-Before moving to the next query, we need to load the `Snowdon Towers Sample Facades` in Explorer's Viewer.
-
-This is quite simple to achieve ;), you just need to copy and paste the version id (available in the field `fileVersionUrn` inside the alternativeRepresentations) in the second input from the page's header and flick the switch to turn on the Viewer. Just like in the gif below:
-
-![Load Viewer](/mfgdm-api-tutorial/assets/images/loadviewer.gif)
-
-### Step 4 - Listing Elements
-
-Now we can explore the components from our designs. In the last query of this section, we'll retrieve the elements from specific categories through the supported filters.
-
-Copy the design id from the `Snowdon Towers Sample Facades` available in the previous response and pass it to the `GetElementsFromCategory` query, just like in the gif below.
-
-![Get Elements](/mfgdm-api-tutorial/assets/images/getelements.gif)
-
-This query lists all the elements based on their **category**. The filter applied:
-
-```js
-filter: {
-  query: "property.name.category==Walls";
-}
-```
-
-Retrieves only elements from the **Walls** category.
-
-By default, the **Elements** query is limited to listing only the first 50 elements, so it doesn't list all the walls from our design.
-
-> _Refer top the table below (also available in the docs)_
-
-| Used by query | Description                                                                                                                                   | Default limit | Maximum limit |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------- |
-| hubs          | Contains a list of hubs returned in response to a query. A hub is a container of projects, shared resources, and users with a common context. | 100           | 200           |
-| projects      | Contains a list of projects returned in response to a query.                                                                                  | 100           | 200           |
-| folders       | Contains a list of hubs returned in response to a query. A hub is a container of projects, shared resources, and users with a common context. | 100           | 200           |
-| aecDesigns    | Contains a list of object representing versions of drawings, typically returned in response to a query.                                       | 50            | 100           |
-| version       | Contains a list of object representing versions of drawings, typically returned in response to a query.                                       | 50            | 100           |
-| elements      | Contains a list of object representing elements of a specific aecdesign.                                                                      | 50            | 500           |
-| properties    | Contains a list of object representing properties of a specific element.                                                                      | 100           | 500           |
-
-So let's improve our response by tweaking it a little bit.
-We can change the default limit, returning to us the first 100 elements instead of only 50. We can also filter a bit more to return only the **instances**. In the current response, there are both types and instances. Since we're more interested in the latter for viewing, let's filter our response to only list instances.
-
-![Improving elements query](/mfgdm-api-tutorial/assets/images/getelementsimproved.gif)
-
-The query will be just like the one below:
-
-```js
-query GetElementsFromCategory {
-  elements(designId: "YOUR DESIGN ID HERE!",
-  filter: {query:"property.name.category==Walls and 'property.name.Element Context'==Instance"},
-  pagination:{limit:500}) {
-    pagination {
-      cursor
-    }
-    results {
-      id
-      name
-      properties {
-        results {
-          name
-          value
-        }
-      }
-    }
-  }
-}
-```
-
-> _Once more, feel free to change this query to use variables insted of "hardcoded" arguments? ;)_
-
-Now imagine that in your workflow, the resulting elements are referred simply as Walls as they are from the Walls category.
-
-Using **Aliases** you can change the elements field name to anything that you need.
-
-Using the query below, instead, you'll retrieve the elements named as Walls:
-
-```js
-query GetElementsFromCategory {
-  Walls: elements(designId: "YOUR DESIGN ID HERE!",
-  filter: {query:"property.name.category==Walls and 'property.name.Element Context'==Instance"},
-  pagination:{limit:500}) {
-    pagination {
-      cursor
-    }
-    results {
-      id
-      name
-      properties {
-        results {
-          name
-          value
-        }
-      }
-    }
-  }
-}
-```
-
-And with that, we covered the first queries with the AEC Data Model API.
+And with that, we covered the first queries with the MFG Data Model API.
 In the next step, we'll understand how this connection with the viewer works and explore more complex queries.
 
 [Next Step - Connecting with Viewer and Advanced Queries](../../connection/home/){: .btn}
