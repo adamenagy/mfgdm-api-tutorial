@@ -1,23 +1,50 @@
 ---
 layout: page
-title: Connecting with Viewer and Advanced Queries
+title: Async Operations
 nav_order: 4
 has_children: false
-permalink: /connection/home/
+permalink: /async/home/
 ---
 
-# Connecting with Viewer and Advanced Queries
+# Async Operations
 
-In this section, we'll understand how the explorer connects the elements retrieved from the response with the elements rendered by the Viewer.
-After this, we'll explore more complex workflows supported by the AEC Data Model API.
-Let's begin with Viewer.
+Certain properties will only be generated on request: thumbnail, exports formats and physical properties. Once they were generated, you can access them again without any delay.
+You can easily spot such fields in the API because they will have a property called `status`, which can have a value of `IN_PROGRESS`, `PENDING`, `FAILED`, `TIMEOUT` or `SUCCESS`
 
-## Connecting with Viewer
+## Thumbnail
 
-Every time you run a query against a specific design and the same design is rendered in the Viewer, the elements from the response are isolated in the Viewer scene.
-To understand the process, let's analyze the diagram below:
+```js
+query GetComponentVersion($componentVersionId: ID!) {
+    componentVersion(componentVersionId: $componentVersionId) {
+        id
+        name
+        partNumber
+        partDescription
+        designItemVersion {
+            id
+            name
+            extensionType
+        }
+        thumbnail {
+            status
+            signedUrl
+        }
+        component {
+            id
+            name
+        }
+    }
+}
+```
 
-![Viewer Connection Process](/assets/images/viewerconnectionprocess.png)
+## Export Formats
+
+## Physical Properties
+
+
+When using the Model Derivative API to get back a thumbail for a model, that can only be done at file level. Inn the case of MFGDM API we can do that for subcomponents as well
+
+![Viewer Connection Process](/mfgdm-api-tutorial/assets/images/viewerconnectionprocess.png)
 
 1. It starts when the user push the button to run a query.
 2. In case there's a design rendered in viewer, a method gets triggered when the response is received, just like in the snippet below:

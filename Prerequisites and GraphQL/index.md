@@ -11,11 +11,11 @@ permalink: /prerequisites/home/
 Before jumping into action, you need to fulfill a few (but essential) prerequisites to follow along with this tutorial. **The steps need to be fulfilled in sequence for you to be able to follow this tutorial (only move to the next step after completing the previous one)**:
 
 1. Firstly, you will need a Fusion Team account. The MFG Data Model API only works for models in a Team Hub, so make sure you have that and not just a Personal Hub
-![translation diagram](/assets/images/teamhub.png)
+![translation diagram](/mfgdm-api-tutorial/assets/images/teamhub.png)
 
 2. If you don't have any good Fusion designs to test things with, you can open and save the [sample models](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-access-samples-files-for-Fusion-360-tutorials.html) in your project using “File” -> “Save As” inside Fusion.
 
-   ![translation diagram](/assets/images/samples.jpeg)
+   ![translation diagram](/mfgdm-api-tutorial/assets/images/samples.jpeg)
 
 Now let's cover a quick introduction on GraphQL.
 
@@ -100,7 +100,7 @@ Before moving to the next step, let's run our very first query.
 
 For that, you just need to go to the explorer app at `https://aecdatamodel-explorer.autodesk.io/`, log in, and run the query from the very first panel (GetHubs), just like in the image below:
 
-![First Query](/assets/images/firstquery.gif)
+![First Query](/mfgdm-api-tutorial/assets/images/firstquery.gif)
 
 If you don't see your ACC hub listed, please double check step 3.
 Once you see your hub, you can move on to the next step.

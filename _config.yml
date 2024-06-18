@@ -5,8 +5,8 @@ heading_anchors: true
 footer_content: '<a href="https://github.com/adamenagy/mfgdm-api-tutorial/issues">Report an issue</a> with this page.'
 description: >- # this means to ignore newlines until "baseurl:"
   This documentation will showcase the new MFG Data Model API.
-logo: "/assets/images/apslogo.png"
-baseurl: "" # the subpath of your site, e.g. /blog
+logo: "/mfgdm-api-tutorial/assets/images/apslogo.png"
+baseurl: "/mfgdm-api-tutorial" # the subpath of your site, e.g. /blog
 url: "http://localhost:4000" # the base hostname & protocol for your site, e.g. http://example.com
 
 # permalink: none
