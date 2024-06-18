@@ -26,7 +26,7 @@ As described at [graphql.org](https://graphql.org/learn/schema/):
 
 > _"Every GraphQL service defines a set of types which completely describe the set of possible data you can query on that service. Then, when queries come in, they are validated and executed against that schema."_
 
-Our API has a schema suitable to address the common data from the MFG industry. It's composed of the 5 constructs described below:
+Our API has a schema suitable to address the common data from the MFG industry. The main objects described below:
 
 - **DesignItem**: Represents an item that contains a product design. You coudl think of it as the file in your project.
 - **DesignItemVersion**: A specific version of a design.
@@ -42,7 +42,7 @@ Our API has a schema suitable to address the common data from the MFG industry. 
 
 Now let's use the explorer to view our schema.
 
-Log in with your Autodesk account, then click on the Docs button and scroll down to access the queries available in the AEC Data Model's schema.
+Log in with your Autodesk account, then click on the Docs button and scroll down to access the queries available in the MFG Data Model's schema.
 
 ![Schema through explorer](../assets/images/schema.gif)
 
@@ -71,15 +71,15 @@ Inside a project, there are multiple folders.
 Inside a folder, there can be other folders or items.
 Lastly, an item can have multiple versions.
 
-![ACC hierarchy](../assets/images/hierarchy.png)
+![Fusion Team hierarchy](../assets/images/hierarchy.png)
 
 Let's traverse this structure through our queries in 4 steps:
 
 ### Step 1 - Listing the hubs
 
-The query to retrieve the hubs is quite simple and it is available in the first pane of the explorer. To list the hubs available you just need to click in the first panel of the explorer and then run the query, like the gif below:
+The query to retrieve the hubs is quite simple and it is available in the first pane of the explorer. To list the hubs available you just need to click in the first panel of the explorer and then run the query, like the image below:
 
-![GET hubs](../assets/images/gethubs.gif)
+![GET hubs](../assets/images/gethubs.png)
 
 In the next query, you'll need to use your hub id as input.
 
@@ -89,9 +89,9 @@ In the next query, you'll need to use your hub id as input.
 
 Following the hierarchy, we're going to list all of the projects available inside one hub. For that, we'll need to provide the hub id as input for the get projects query.
 
-Go ahead and copy the id of the hub you're using, move to the `GetProjects` pane, and paste the id in the proper field, just like in the gif below:
+Go ahead and copy the id of the hub you're using, move to the `GetProjects` pane, and paste the id in the proper field, just like in the image below:
 
-![GET projects](../assets/images/getprojects.gif)
+![GET projects](../assets/images/getprojects.png)
 
 Now you'll need to find the project that hosts your Fusion designs for this tutorial.
 
@@ -159,12 +159,12 @@ query GetProjects ($hubId:ID!, $projectName:String!) {
 ```
 
 The next query requires a project id, and MFG Data Model API works with its unique value for the project id. That's why it exposes the usual project id inside the `alternativeRepresentations` field.
-We are not going to use the alternative representation for the projects in this tutorial but is always good to know how to retrieve it. You'll need it if you want to connect with ACC APIs or Data Management APIs, for instance.
+We are not going to use the alternative representation for the projects in this tutorial but is always good to know how to retrieve it. You'll need it if you want to connect with Data Management APIs, for instance.
 
 ### Step 3 - Listing Designs
 
 Usually inside a project, we have a complete structure of folders separating files according to project phase, disciplines, teams, etc...
-You might be used to traverse this folder structure to reach your items level, but that isn't necessary when we use AEC Data Model API.
+You might be used to traverse this folder structure to reach your items level, but that isn't necessary when we use MFG Data Model API.
 
 There are queries that list designs from a project and even from a hub.
 Obviously, by limiting the container the response is more precise, avoiding the need to go through multiple pages or filtering.
