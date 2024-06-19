@@ -114,7 +114,7 @@ Before moving to the next step, let's run our very first query.
 
 For that, you just need to go to the explorer app at `https://aecdatamodel-explorer.autodesk.io/`, log in, and run the query from the very first panel (GetHubs), just like in the image below:
 
-![First Query](/mfgdm-api-tutorial/assets/images/firstquery.gif)
+![First Query](/mfgdm-api-tutorial/assets/images/firstquery.png)
 
 > _We'll get back to GraphQL syntax throughout the queries in the next section. As it's not like the usual REST requests, we'll cover the differences and possibilities in parallel, while also learning the supported MFG Data Model API queries._
 
