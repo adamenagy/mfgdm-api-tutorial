@@ -86,7 +86,7 @@ Variables:
 
 ## Physical Properties
 
-Physical properties include area, volume, density, mass and bounding box. They are avilable under the `physicalProperties` field. 
+Physical properties include area, volume, density, mass and bounding box. They are available under the `physicalProperties` field. 
 
 Query:
 ```js

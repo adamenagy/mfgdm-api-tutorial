@@ -112,7 +112,7 @@ To summarize, with **GraphQL** we have the benefits below:
 
 Before moving to the next step, let's run our very first query.
 
-For that, you just need to go to the explorer app at `https://aecdatamodel-explorer.autodesk.io/`, log in, and run the query from the very first panel (GetHubs), just like in the image below:
+For that, you just need to go to the explorer app at `https://mfgdatamodel-explorer.autodesk.io/`, log in, and run the query from the very first panel (GetHubs), just like in the image below:
 
 ![First Query](/mfgdm-api-tutorial/assets/images/firstquery.png)
 

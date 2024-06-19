@@ -17,8 +17,10 @@ We'll walk you through the prerequisites, initial workflows, advanced queries, a
 If you're interested in any of the following cases, then this tutorial is suitable to you:
 
 1. Get hub and project contents
-2. Get Fusion model properties (part number, )
-3. Get Physical properties (boundix box of design, mass, volume, etc)
-4. 
+2. Access Fusion model properties (part number, description, etc)
+3. Retrieve physical properties (bounding box of design, mass, volume, etc)
+4. Export to other files formats (STEP, OBJ, STL)
+5. Manage your hubs and projects
+6. Use custom properties
 
 
