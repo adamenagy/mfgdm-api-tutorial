@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Project Adminitration
+title: Project Administration
 nav_order: 5
 has_children: false
 permalink: /projects/home/
@@ -357,3 +357,4 @@ Variables:
 
 With the response from this query, you'll obtain a list of elements **referenced by all the instances with the name L2**. From these elements, we filter **the ones from the Ducts category and retrieve only the Diameter and Length properties**.
 
+[Next Step - Custom Properties](../../properties/home/){: .btn}

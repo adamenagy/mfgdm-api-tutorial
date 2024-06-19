@@ -173,4 +173,4 @@ You might be used to traverse this folder structure to reach your items level, b
 And with that, we covered the first queries with the MFG Data Model API.
 In the next step, we'll understand how this connection with the viewer works and explore more complex queries.
 
-[Next Step - Connecting with Viewer and Advanced Queries](../../connection/home/){: .btn}
+[Next Step - Async Operations](../../async/home/){: .btn}

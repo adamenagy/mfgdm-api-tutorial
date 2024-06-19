@@ -22,14 +22,18 @@ Don't worry if you're not a full-stack web developer. You won't need that level 
 
 As long as you are familiar with Fusion designs and curious about new technologies, you're in good shape to go through the contents shared here.
 
-This tutorial is divided into 3 main sections:
+This tutorial is divided into these main sections:
 
 1. [Prerequisites and GraphQL](./prerequisites/home/)
 
 2. [Explorer and First Queries](./explorer/home/)
 
-3. [Advanced Queries](./connection/home/)
+3. [Async Operations](./async/home/)
 
-We'll start ensuring that everyone addresses the prerequisites.
+4. [Project Administration](./projects/home/)
+
+5. [Custom Properties](./properties/home/)
+
+We'll start by ensuring that everyone addresses the prerequisites.
 
 [Next Step - Prerequisites and GraphQL](./prerequisites/home/){: .btn}
