@@ -153,7 +153,7 @@ query GetLinkedCollections($hubId:ID!) {
 
 ## End Users
 
-After going through the above steps, the custom **property** we just created should be available for all our designs. Now we can just use one of the **component version id** we used for e.g. getting a thumbnail and use that here to set the value of our **property**.
+After going through the above steps, the custom **property** we just created should be available for all our designs. Now we can just use a **component version id**, e.g. the one we used for getting a thumbnail, and use that here to set the value of our **property**.
 
 ### Set custom property value
 
