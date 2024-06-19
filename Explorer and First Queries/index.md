@@ -44,7 +44,7 @@ Now let's use the explorer to view our schema.
 
 Log in with your Autodesk account, then click on the Docs button and scroll down to access the queries available in the MFG Data Model's schema.
 
-![Schema through explorer](/mfgdm-api-tutorial/assets/images/schema.gif)
+![Schema through explorer](/mfgdm-api-tutorial/assets/images/docs.png)
 
 The first query we used in the previous section returned to us a list of hubs. According to this documentation we could, for instance, use a filter to retrieve only the hubs matching certain conditions. Exploring the schema gives us a better idea about the capabilities of the API. If you scroll down you'll see a list with all the queries available including the parameters that can be passed to compose the responses.
 
