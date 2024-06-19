@@ -6,9 +6,9 @@ has_children: false
 permalink: /explorer/home/
 ---
 
-# Explorer and First Queries
+# Explorer
 
-Now that you're in good shape to use the MFG Data Model API, we can start experimenting with the queries and the explorer to get more comfortable with this new service.
+Now that you're in good shape to use the **MFG Data Model API**, we can start experimenting with the queries and the explorer to get more comfortable with this new service.
 
 In this section, we'll introduce you to the interface that will help you explore your design data, focusing mainly on the API. As said before, we don't want you to worry about frameworks, coding, and cloud providers. We can keep it simple using the [explorer](https://mfgdatamodel-explorer.autodesk.io).
 
@@ -18,7 +18,7 @@ The explorer's UI was built to be simple and intuitive. We'll use it mostly to p
 
 > _The explorer is built on top of the [graphiql](https://github.com/graphql/graphiql) project! If you want additional details on this project, feel free to check its documentation ;)_
 
-It also comes with multiple functionalities to check the history of queries, format queries, configure themes and shortcuts, and a button to display the queries available with the API. This last option is the first one we'll go through, as it provides us access to our API schema. This will be our entry point. We'll start our journey by getting familiar with the MFG Data Model API schema.
+It also comes with multiple functionalities to check the history of queries, format queries, configure themes and shortcuts, and a button to display the queries available with the API. This last option is the first one we'll go through, as it provides us access to our API schema. This will be our entry point. We'll start our journey by getting familiar with the **MFG Data Model** API schema.
 
 ## MFG Data Model Schema
 
@@ -38,7 +38,7 @@ Our API has a schema suitable to address the common data from the MFG industry. 
 - **Derivatives**: Export file formats that can be requested for a ComponentVersion: STEP, STL or OBJ.
 - **ManagePropertiesOnVersion**: Lifecycle information related to the ComponentVersion: itemNumber, lifeCycle, etc. 
 
-### Explorer Docs
+## Explorer Docs
 
 Now let's use the explorer to view our schema.
 
@@ -48,7 +48,7 @@ Log in with your Autodesk account, then click on the **Docs** button and scroll 
 
 The first query we used in the previous section returned to us a list of hubs. According to this documentation we could, for instance, use a filter to retrieve only the hubs matching certain conditions. Exploring the schema gives us a better idea about the capabilities of the API. If you scroll down you'll see a list of all the queries available including the parameters that can be passed to compose the responses.
 
-### GraphQL Voyager
+## GraphQL Voyager
 
 > There's also another great tool to explore GraphQL API schemas:
 > The [GraphQL Voyager](https://mfgdatamodel-explorer.autodesk.io/voyager)
@@ -61,7 +61,7 @@ With that you will be able to inspect all the available queries and constructs f
 
 Now that we know the schema's importance and know how to view it using the explorer, we can continue with the subsequent queries.
 
-## First Queries
+# First Queries
 
 We suppose that you're familiar with how the data is organized in the context of Fusion hubs but if not, here is a quick overview:
 
@@ -75,7 +75,7 @@ Lastly, an item can have multiple versions.
 
 Let's traverse this structure through our queries in 4 steps:
 
-### Step 1 - Listing the hubs
+## Step 1 - Listing the hubs
 
 The query to retrieve the hubs is quite simple and it is available in the first pane of the explorer. To list the hubs available you just need to click in the first panel of the explorer and then run the query, like the image below:
 
@@ -85,7 +85,7 @@ In the next query, you'll need to use your hub id as input.
 
 > _This id is the same one used by other APS APIs (e.g. Data Management) to point to hubs._
 
-### Step 2 - Listing the projects
+## Step 2 - Listing the projects
 
 Following the hierarchy, we're going to list all of the projects available inside one hub. For that, we'll need to provide the hub id as input for the get projects query.
 
@@ -128,9 +128,9 @@ This way is better to address variables as they can be assigned multiple time ea
 
 In case your hub has many projects making the one you need to use missing from the first page (or even hard to find), there's a way to filter the response.
 
-For that you can filter the projects by name, passing the name of your project like the gif below:
+For that you can filter the projects by name, passing the name of your project like in the image below:
 
-![GET projects](/mfgdm-api-tutorial/assets/images/getprojectsfilter.gif)
+![GET projects](/mfgdm-api-tutorial/assets/images/getprojectsfilter.png)
 
 For simplicity, you can just copy and paste the query below if needed (replacing it with your project name and hub id) ;)
 
@@ -143,8 +143,8 @@ query GetProjects ($hubId:ID!, $projectName:String!) {
     results {
       id
       name
-      alternativeRepresentations{
-        externalProjectId
+      alternativeIdentifiers{
+        dataManagementAPIProjectId
       }
     }
   }
@@ -158,13 +158,13 @@ query GetProjects ($hubId:ID!, $projectName:String!) {
 }
 ```
 
-The next query requires a project id, and MFG Data Model API works with its unique value for the project id. That's why it exposes the usual project id inside the `alternativeRepresentations` field.
-We are not going to use the alternative representation for the projects in this tutorial but is always good to know how to retrieve it. You'll need it if you want to connect with Data Management APIs, for instance.
+The next query requires a project id, and **MFG Data Model API** works with its unique value for the project id. That's why it exposes the usual project id inside the `alternativeIdentifiers` field.
+We are not going to use the alternative representation for the projects in this tutorial but is always good to know how to retrieve it. You'll need it if you want to connect with **Data Management APIs**, for instance.
 
-### Step 3 - Listing Designs
+## Step 3 - Listing Designs
 
 Usually inside a project, we have a complete structure of folders separating files according to project phase, disciplines, teams, etc...
-You might be used to traverse this folder structure to reach your items level, but that isn't necessary when we use MFG Data Model API.
+You might be used to traverse this folder structure to reach your items level, but that isn't necessary when we use **MFG Data Model API**.
 
 
 

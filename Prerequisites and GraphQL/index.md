@@ -10,23 +10,23 @@ permalink: /prerequisites/home/
 
 Before jumping into action, you need to fulfill a few (but essential) prerequisites to follow along with this tutorial. **The steps need to be fulfilled in sequence for you to be able to follow this tutorial (only move to the next step after completing the previous one)**:
 
-1. Firstly, you will need a Fusion Team account. The MFG Data Model API only works for models in a Team Hub, so make sure you have that and not just a Personal Hub
-![translation diagram](/mfgdm-api-tutorial/assets/images/teamhub.png)
+1. Firstly, you will need a **Fusion Team** account. The **MFG Data Model API** only works for models in a **Team Hub**, so make sure you have that and not just a **Personal Hub**
+![Team Hub](/mfgdm-api-tutorial/assets/images/teamhub.png)
 
-2. If you don't have any good Fusion designs to test things with, you can open and save the [sample models](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-access-samples-files-for-Fusion-360-tutorials.html) in your project using “File” -> “Save As” inside Fusion.
+2. If you don't have any good **Fusion** designs to test things with, you can open and save the [sample models](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-access-samples-files-for-Fusion-360-tutorials.html) in your project using **File** -> **Save As** inside **Fusion**.
 
-   ![translation diagram](/mfgdm-api-tutorial/assets/images/samples.jpeg)
+![Fusion sample models](/mfgdm-api-tutorial/assets/images/samples.jpeg)
 
-Now let's cover a quick introduction on GraphQL.
+Now let's cover a quick introduction on **GraphQL**.
 
 # GraphQL
 
-The way the MFG Data Model is structured makes it a perfect match for GraphQL.
+The way the **MFG Data Model** is structured makes it a perfect match for **GraphQL**.
 
-For those unfamiliar, it is a query language for APIs.
-It Provides a complete and understandable description of the data in your API, and gives you the power to ask for exactly what you need and nothing more.
+For those unfamiliar with **GraphQL**, it is a query language for APIs.
+It provides a complete and understandable description of the data in your API, and gives you the power to ask for exactly what you need and nothing more.
 
-GraphQL is much easier to use than REST, but it requires a better understanding of data structures​.
+**GraphQL** is much easier to use than **REST**, but it requires a better understanding of data structures​.
 
 With a single endpoint, data fetching is easier because you don't need to make requests to multiple endpoints to get a set of data.
 
@@ -34,7 +34,7 @@ The request specifies precisely the data that’s going to be returned
 
 Let's compare a case where we need to check the length of a specific element in a specific version of a given design.
 
-With the MFG Data Model GraphQL endpoint, the query looks like this:
+With the **MFG Data Model GraphQL** endpoint, the query looks like this:
 
 ```js
 query {
@@ -98,17 +98,17 @@ And the response for this query will look like this
 }
 ```
 
-Note that in this case we specified that we wanted to obtain the Fusion Design version with id `Y29..SGE`.
+Note that in this case we specified that we wanted to obtain the **Fusion** design version with id `Y29..SGE`.
 From this design, we specified we wanted to get the list of occurrences of other components, and what exact properties of those we want: **partNumber**.
 
-With REST API we would need additional requests, and wouldn't be possible to specify with this precision the data in the response.
+With a **REST** API we would need additional requests, and wouldn't be possible to specify with this precision the data in the response.
 
-To summarize, with GraphQL we have the benefits below:
+To summarize, with **GraphQL** we have the benefits below:
 
-- Single REST API endpoint – You only need to send your query to this endpoint when coding it in your applications
-- No fixed Structure for the exchange of data – as compared to the Model Derivative REST API, where you will get a large JSON dataset, that you need to understand and be able to find the data you are looking for
+- Single **REST** API endpoint – You only need to send your query to this endpoint when coding it in your applications
+- No fixed Structure for the exchange of data – as compared to the **Model Derivative REST** API, where you will get a large JSON dataset, that you need to understand and be able to find the data you are looking for
 - No over-fetching – as compared to the Model Derivative REST API, where you may need to call various APIs several times to get the data you are looking for.
-- Efficiently using resources – Because the GraphQL implementation is on the Autodesk server side, it handles the requests to get the data you are asking for. This minimizes the traffic and allows us to optimize without disruption to the GraphQL aspects.
+- Efficiently using resources – Because the **GraphQL** implementation is on the Autodesk server side, it handles the requests to get the data you are asking for. This minimizes the traffic and allows us to optimize without disruption to the **GraphQL** aspects.
 
 Before moving to the next step, let's run our very first query.
 
