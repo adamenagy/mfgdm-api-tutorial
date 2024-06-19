@@ -38,17 +38,15 @@ With the MFG Data Model GraphQL endpoint, the query looks like this:
 
 ```js
 query {
-  aecDesignByVersionNumber(designId: "YWVjZH5...EpfSHZ3", versionNumber:1) {
-    elements(filter:{query:"'property.name.External ID'==41434aa5-...-0018527b"}){
-      results{
-        properties(filter:{names:["Length"]}){
-          results{
-            name
-            value
-            propertyDefinition{
-              units
-            }
-          }
+  componentVersion(componentVersionId: "Y29tcH5jby5uckdoR0ZIb1FXU3NQdFlhU0V2YThnfkd4YWpYb3NuUHdCenU5Y0huVmd4bUNfYWdhfm5jM2lianhOaHJLRU9XYjZBUVdhSGE") {
+    id
+    name
+    partNumber
+    partDescription
+    occurrences {
+      results {
+        componentVersion {
+          partNumber
         }
       }
     }
@@ -61,20 +59,36 @@ And the response for this query will look like this
 ```js
 {
   "data": {
-    "aecDesignByVersionNumber": {
-      "elements": {
+    "componentVersion": {
+      "id": "Y29tcH5jby5uckdoR0ZIb1FXU3NQdFlhU0V2YThnfkd4YWpYb3NuUHdCenU5Y0huVmd4bUNfYWdhfm5jM2lianhOaHJLRU9XYjZBUVdhSGE",
+      "name": "Steering Wheel Assembly -- FoFD test",
+      "partNumber": "Steering Wheel Assembly - Original",
+      "partDescription": "Steering Wheel",
+      "occurrences": {
         "results": [
           {
-            "properties": {
-              "results": [
-                {
-                  "name": "Length",
-                  "value": 11.000000000000002,
-                  "propertyDefinition": {
-                    "units": "Meters"
-                  }
-                }
-              ]
+            "componentVersion": {
+              "partNumber": "bolt-1"
+            }
+          },
+          {
+            "componentVersion": {
+              "partNumber": "bolt-2"
+            }
+          },
+          {
+            "componentVersion": {
+              "partNumber": "Base-modified"
+            }
+          },
+          {
+            "componentVersion": {
+              "partNumber": "Steering wheel form v1"
+            }
+          },
+          {
+            "componentVersion": {
+              "partNumber": "Center-bracket-modified"
             }
           }
         ]
@@ -84,8 +98,8 @@ And the response for this query will look like this
 }
 ```
 
-Note that in this case we specified that we wanted to obtain the AEC Design with id `YWVjZH5...EpfSHZ3` from version `1`.
-From this design, we specified the element with `External Id` equal to `41434aa5-...-0018527b`, and from this element, we retrieved the property with a name equal to `length` including its **value**, **name**, and **unit**.
+Note that in this case we specified that we wanted to obtain the Fusion Design version with id `Y29..SGE`.
+From this design, we specified we wanted to get the list of occurrences of other components, and what exact properties of those we want: **partNumber**.
 
 With REST API we would need additional requests, and wouldn't be possible to specify with this precision the data in the response.
 
@@ -102,9 +116,6 @@ For that, you just need to go to the explorer app at `https://aecdatamodel-explo
 
 ![First Query](/mfgdm-api-tutorial/assets/images/firstquery.gif)
 
-If you don't see your ACC hub listed, please double check step 3.
-Once you see your hub, you can move on to the next step.
-
-> _We'll get back to GraphQL syntax throughout the queries in the next section. As it's not like the usual REST requests, we'll cover the differences and possibilities in parallel, while also learning the supported AEC Data Model API queries._
+> _We'll get back to GraphQL syntax throughout the queries in the next section. As it's not like the usual REST requests, we'll cover the differences and possibilities in parallel, while also learning the supported MFG Data Model API queries._
 
 [Next Step - Explorer and First Queries](../../explorer/home/){: .btn}
