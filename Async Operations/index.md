@@ -16,8 +16,6 @@ You can easily spot such fields in the API because they will have a property cal
 When using the Model Derivative API to get back a thumbail for a model, that can only be done at file level. In the case of MFG DM API we can do that for subcomponents as well. \
 When running the below query for the first time you'll get a `status` with value `IN_PROGRESS`. If you run it a second time it should then say `SUCCESS` and this time the `signedUrl` property should provide a URL that you can simply paste in the browser to see the generated thumbnail. 
 
-Query:
-
 ```js
 query GetComponentVersion($componentVersionId: ID!) {
   componentVersion(componentVersionId: $componentVersionId) {
@@ -41,20 +39,15 @@ query GetComponentVersion($componentVersionId: ID!) {
   }
 }
 ```
-
-Variables:
-
 ```js
 {
-  "componentVersionId": "Y29tcH5WQVZNUW1sYmxrZDBtaXJwU0NYMHJ0X0wyQ34zMlBTQ2daMXJLY2V3SHlCN1dkbEZyX2FnYX53RnlaU1BGSmNQY2l3NDdFeTBIemJX"
+  "componentVersionId": "YOUR COMPONENT VERSION ID HERE!"
 }
 ```
 
 ## Export Formats
 
 Currently there are 3 export file formats supported by the API: STEP, OBJ and STL and you can access them through the `derivatives` field.  
-
-Query:
 
 ```js
 query GetDerivatives($componentVersionId: ID!, $derivativeInput: DerivativeInput!) {
@@ -71,12 +64,9 @@ query GetDerivatives($componentVersionId: ID!, $derivativeInput: DerivativeInput
   }
 }
 ```
-
-Variables:
-
 ```js
 {
-  "componentVersionId": "Y29tcH5WQVZNUW1sYmxrZDBtaXJwU0NYMHJ0X0wyQ35lazJXeTN5Tzg3a0ZQcll5aGlYMmdTX2FnYX44UDZOMThJU3k1aGVwZENJN01td0tO",
+  "componentVersionId": "YOUR COMPONENT VERSION ID HERE!",
   "derivativeInput": {
     "generate": true,
     "outputFormat": ["STEP"]
@@ -88,7 +78,6 @@ Variables:
 
 Physical properties include area, volume, density, mass and bounding box. They are available under the `physicalProperties` field. 
 
-Query:
 ```js
 query GetPhysicalProperties($componentVersionId: ID!) {
   componentVersion(componentVersionId: $componentVersionId) {
@@ -162,10 +151,9 @@ query GetPhysicalProperties($componentVersionId: ID!) {
   }
 }
 ```
-Variables:
 ```js
 {
-  "componentVersionId": "Y29tcH5WQVZNUW1sYmxrZDBtaXJwU0NYMHJ0X0wyQ35WVGxxN01wd3I5a3lnVFV1eFlUbkZoX2FnYX5SeXlYZHlmbWFhd1dOV3ZrSFhzcUdL"
+  "componentVersionId": "YOUR COMPONENT VERSION ID HERE!"
 }
 ```
 
