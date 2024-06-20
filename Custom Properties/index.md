@@ -220,6 +220,30 @@ query GetCustomProperties($componentVersionId:ID!) {
 }
 ```
 
+# Demo App
+
+We created a demo app that can help with the work of all 3 personas listed above.
+
+You just have to provide your app's credentials, making sure that its `Callback URL` contains `https://mfgdatamodel-demo.autodesk.io/api/auth/callback`
+
+![Credentials](/mfgdm-api-tutorial/assets/images/demo_credentials.png)
+
+Then you can manage your property definitions and collections:
+
+![Credentials](/mfgdm-api-tutorial/assets/images/demo_properties.png)
+
+In order to list all the hubs you have access to, link property definition collections to them, assign properties to component definitions, you need to log in:
+
+![Sign in](/mfgdm-api-tutorial/assets/images/demo_login.png)
+
+Then you can check the **Hubs browser**:
+
+![Hubs browser](/mfgdm-api-tutorial/assets/images/demo_hubs.png)
+
+
+It's live here: [https://mfgdatamodel-demo.autodesk.io/](https://mfgdatamodel-demo.autodesk.io/)
+
+
 Now you've covered many possible scenarios enabled by **MFG Data Model API**.
 From now you have more than enough to start experimenting with your custom workflows on your designs.
 We also have a few samples with live demos and source code available for you to leverage.
