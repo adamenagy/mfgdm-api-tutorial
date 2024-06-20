@@ -232,7 +232,7 @@ Then you can manage your property definitions and collections:
 
 ![Credentials](/mfgdm-api-tutorial/assets/images/demo_properties.png)
 
-In order to list all the hubs you have access to, link property definition collections to them, assign properties to component definitions, you need to log in:
+In order to list all the hubs you have access to, link property definition collections to them, assign properties to component versions, you need to log in:
 
 ![Sign in](/mfgdm-api-tutorial/assets/images/demo_login.png)
 
