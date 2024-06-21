@@ -17,25 +17,24 @@ Before jumping into action, you need to fulfill a few (but essential) prerequisi
 
 ![Fusion sample models](/mfgdm-api-tutorial/assets/images/samples.jpeg)
 
-Now let's cover a quick introduction on **GraphQL**.
+Now let's continue with a quick introduction into **GraphQL**.
 
 # GraphQL
 
 The way the **MFG Data Model** is structured makes it a perfect match for **GraphQL**.
 
 For those unfamiliar with **GraphQL**, it is a query language for APIs.
-It provides a complete and understandable description of the data in your API, and gives you the power to ask for exactly what you need and nothing more.
+It provides a complete and understandable description of the data in your API, and gives you the power to ask for exactly what you need and get back exactly that and nothing more.
 
 **GraphQL** is much easier to use than **REST**, but it requires a better understanding of data structures​.
 
 With a single endpoint, data fetching is easier because you don't need to make requests to multiple endpoints to get a set of data.
 
-The request specifies precisely the data that’s going to be returned
+The request specifies precisely the data that’s going to be returned.
 
-Let's compare a case where we need to check the length of a specific element in a specific version of a given design.
+Let's see how you could retrieve the properties of a component and see what other components it's using. 
 
-With the **MFG Data Model GraphQL** endpoint, the query looks like this:
-
+With the **MFG Data Model GraphQL** endpoint, such a query would look like this:
 ```js
 query {
   componentVersion(componentVersionId: "Y29tcH5jby5uckdoR0ZIb1FXU3NQdFlhU0V2YThnfkd4YWpYb3NuUHdCenU5Y0huVmd4bUNfYWdhfm5jM2lianhOaHJLRU9XYjZBUVdhSGE") {
@@ -53,9 +52,7 @@ query {
   }
 }
 ```
-
-And the response for this query will look like this
-
+And the response for this query will look like this:
 ```js
 {
   "data": {
@@ -98,8 +95,8 @@ And the response for this query will look like this
 }
 ```
 
-Note that in this case we specified that we wanted to obtain the **Fusion** design version with id `Y29..SGE`.
-From this design, we specified we wanted to get the list of occurrences of other components, and what exact properties of those we want: **partNumber**.
+Note that in this case we specified that we wanted to obtain a **component version** from a **Fusion** design with **component version id** `Y29..SGE`.
+From this component, we specified we wanted to get the list of occurrences of other components, and what exact properties of those we want: **partNumber**.
 
 With a **REST** API we would need additional requests, and wouldn't be possible to specify with this precision the data in the response.
 
@@ -112,10 +109,10 @@ To summarize, with **GraphQL** we have the benefits below:
 
 Before moving to the next step, let's run our very first query.
 
-For that, you just need to go to the **Explorer** app at `https://mfgdatamodel-explorer.autodesk.io/`, log in, and run the query from the very first panel (GetHubs), just like in the image below:
+For that, you just need to go to the **Explorer** app at [https://mfgdatamodel-explorer.autodesk.io/](https://mfgdatamodel-explorer.autodesk.io/), log in, and run the query from the very first panel called **GetHubs**, just like in the image below:
 
 ![First Query](/mfgdm-api-tutorial/assets/images/firstquery.png)
 
-> _We'll get back to GraphQL syntax throughout the queries in the next section. As it's not like the usual REST requests, we'll cover the differences and possibilities in parallel, while also learning the supported MFG Data Model API queries._
+> _We'll get back to GraphQL syntax throughout the queries in the next section. As it's not like the usual **REST** requests, we'll cover the differences and possibilities in parallel, while also learning the supported **MFG Data Model API** queries._
 
 [Next Step - Explorer and First Queries](../../explorer/home/){: .btn}

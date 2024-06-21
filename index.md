@@ -12,7 +12,7 @@ nav_order: 1
 
 ## Introduction
 
-In this tutorial, we'll cover the first steps in your journey with the **MFG Data Model API** in a quick and simple way. At first, we'll go through the prerequisites required to make everything work, and then we'll have a basic introduction to the **GraphQL** interface (used by this API).
+In this tutorial, we'll cover the first steps in your journey with the **MFG Data Model API** in a quick and simple way. At first, we'll go through the prerequisites required to make everything work, and then we'll have a basic introduction to the **GraphQL** interface used by this API.
 
 Once we get that covered, we'll run from basic queries to more advanced ones, always using the **Explorer**, just like in the image below.
 

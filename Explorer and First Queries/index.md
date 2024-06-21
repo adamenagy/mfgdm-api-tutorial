@@ -20,6 +20,10 @@ The **Explorer**'s UI was built to be simple and intuitive. We'll use it mostly 
 
 It also comes with multiple functionalities to check the history of queries, format queries, configure themes and shortcuts, and a button to display the queries available with the API. This last option is the first one we'll go through, as it provides us access to our API schema. This will be our entry point. We'll start our journey by getting familiar with the **MFG Data Model** API schema.
 
+The UI also provides auto-complete, error checking and in-editor access to documentation:
+
+![Explorer UI](/mfgdm-api-tutorial/assets/images/graphiql.png)
+
 ## MFG Data Model Schema
 
 As described at [graphql.org](https://graphql.org/learn/schema/):
@@ -55,7 +59,7 @@ The first query we used in the previous section returned to us a list of hubs. A
 
 ![Voyager](/mfgdm-api-tutorial/assets/images/voyager.png)
 
-With that you will be able to inspect all the available queries and constructs from MFG Data Model API.
+With that you will be able to inspect all the available queries and constructs from **MFG Data Model API**.
 
 > _Keep one tab with the schema open for further exploration throughout this tutorial 😉_
 
@@ -263,7 +267,7 @@ query GetProperties($componentVersionId:ID!) {
 }
 ```
 
-And with that, we covered the first queries with the MFG Data Model API.
+And with that, we covered the first queries with the **MFG Data Model API**.
 In the next step, we'll explore some other queries.
 
 [Next Step - Async Operations](../../async/home/){: .btn}
