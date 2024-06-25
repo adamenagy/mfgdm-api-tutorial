@@ -13,7 +13,7 @@ You can easily spot such fields in the API because they will have a property cal
 
 ## Thumbnail
 
-When using the Model Derivative API to get back a thumbail for a model, that can only be done at file level. In the case of MFG DM API we can do that for subcomponents as well. \
+When using the **Model Derivative API** to get back a thumbail for a model, that can only be done at file level. In the case of **MFG DM API** we can do that for subcomponents as well. \
 When running the below query for the first time you'll get a `status` with value `IN_PROGRESS`. If you run it a second time it should then say `SUCCESS` and this time the `signedUrl` property should provide a URL that you can simply paste in the browser to see the generated thumbnail. 
 
 ```js

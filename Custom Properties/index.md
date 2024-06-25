@@ -11,7 +11,7 @@ permalink: /properties/home/
 Custom Properties allow you to attach your own properties and values to any component version of your **Fusion** designs. This functionality differentiates 3 personas: 
 - **Custom Property Admin**: the owner of the **APS app** who creates the **property definitions** and organizes them into **collections**
 - **Fusion Hub Admin**: the person who, using the **Custom Property Admin**'s app, can link a specific **property definition collection** to the **hub** they are the admin of
-- **End Users**: the users of the **hub** that has a **property definition collection** linked to it. These users can access these properties on all the component versions and modify their values
+- **End Users**: the users of the **hub** that has a **property definition collection** linked to it. They can access these properties on all the component versions and modify their values
 
 Now let's go through each persona and see what they can do using the API.
 
@@ -244,8 +244,8 @@ Then you can check the **Hubs browser**:
 It's live here: [https://mfgdatamodel-demo.autodesk.io/](https://mfgdatamodel-demo.autodesk.io/)
 
 
-Now you've covered many possible scenarios enabled by **MFG Data Model API**.
-From now you have more than enough to start experimenting with your custom workflows on your designs.
+We've covered many possible scenarios enabled by **MFG Data Model API**.
+Now you know enough to start experimenting with your custom workflows on your designs.
 We also have a few samples with live demos and source code available for you to leverage.
 
 [MFG Data Model Explorer source code](https://github.com/autodesk-platform-services/aps-data-explorer)
