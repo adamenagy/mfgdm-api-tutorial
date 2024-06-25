@@ -38,7 +38,7 @@ Our API has a schema suitable to address the common data from the MFG industry. 
 - **ComponentVersion**: A specific version of a component.
 - **Occurrence**: An instance of a component inside another component.
 - **Properties**: Custom properties of a ComponentVersion. 
-- **PhysicalProperties**: Physical properties of a ComponentVersion: area, volume, density, mass and bounnding box.
+- **PhysicalProperties**: Physical properties of a ComponentVersion: area, volume, density, mass and bounding box.
 - **Derivatives**: Export file formats that can be requested for a ComponentVersion: STEP, STL or OBJ.
 - **ManagePropertiesOnVersion**: Lifecycle information related to the ComponentVersion: itemNumber, lifeCycle, etc. 
 
@@ -67,7 +67,7 @@ Now that we know the schema's importance and know how to view it using the **Exp
 
 # First Queries
 
-We suppose that you're familiar with how the data is organized in the context of Fusion hubs but if not, here is a quick overview:
+We suppose that you're familiar with how the data is organized in the context of **Fusion** hubs but if not, here is a quick overview:
 
 At the top level, there are the hubs.
 Inside each hub, there are the projects.
@@ -89,9 +89,9 @@ In the next query, you'll need to use your **hub id** as input.
 
 ## Step 2 - Listing the projects
 
-Following the hierarchy, we're going to list all of the projects available inside one hub. For that, we'll need to provide the **hub id** as input for the get projects query.
+Following the hierarchy, we're going to list all of the projects available inside one hub. For that, we'll need to provide the **hub id** as input for the **GetProjects** query.
 
-Go ahead and copy the id of the hub you're using, move to the `GetProjects` pane, and paste the id in the proper field in the **Variables** section, just like in the image below:
+Go ahead and copy the id of the hub you're using, move to the **GetProjects** pane, and paste the id in the proper field in the **Variables** section, just like in the image below:
 
 ![GET projects](/mfgdm-api-tutorial/assets/images/getprojects.png)
 
@@ -120,7 +120,7 @@ And in Variables space, the id of the hub:
 }
 ```
 
-This way is better to address variables as they can be assigned multiple time easier at any place in the query, and we don't need to change any value in the query to point to a different hub.
+This way is better to address variables as they can be assigned multiple times at any place in the query, and we don't need to change any value in the query to point to a different hub.
 
 In case your hub has many projects making the one you need to use missing from the first page (or even hard to find), there's a way to filter the response.
 
@@ -128,7 +128,7 @@ For that you can filter the projects by name, passing the name of your project l
 
 ![GET projects](/mfgdm-api-tutorial/assets/images/getprojectsfilter.png)
 
-For simplicity, you can just copy and paste the query below if needed (replacing it with your project name and hub id) 😉
+For simplicity, you can just copy and paste the query below if needed (replacing it with your **project name** and **hub id**) 😉
 
 ```js
 query GetProjects ($hubId:ID!, $projectName:String!) {
@@ -159,7 +159,7 @@ We are not going to use the alternative representation for the projects in this 
 ## Step 3 - Listing Designs
 
 We can either use one of the designs in the root folder of the project or find the folder it resides in.
-First use the `GetFolders` tab in the **Explorer** to see if you design is there:
+First use the **GetFolders** tab in the **Explorer** to see if you design is there:
 
 ![GET folders](/mfgdm-api-tutorial/assets/images/getfolders.png)
 
@@ -200,7 +200,7 @@ query GetFolders($projectId:ID!) {
 }
 ```
 
-If your design is in one of the folders then copy the id of that folder from the response and use it in the next query available on the `GetItems` tab:
+If your design is in one of the folders then copy the id of that folder from the response and use it in the next query available on the **GetItems** tab:
 
 ```js
 query GetItems($projectId:ID!, $folderId:ID!) {
@@ -247,7 +247,7 @@ Now you should be able to spot the design you are interested in so you should co
 
 ## Step 4 - Get Design Properties
 
-Now that we have a **component version id** we can get all sorts of information, as you'll see in the following tutorials. This time just use the query on the `GetProperties` tab
+Now that we have a **component version id** we can get all sorts of information, as you'll see in the following tutorials. This time just use the query on the **GetProperties** tab
 
 ![GET properties](/mfgdm-api-tutorial/assets/images/getproperties.png)
 

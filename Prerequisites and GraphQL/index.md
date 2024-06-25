@@ -8,7 +8,7 @@ permalink: /prerequisites/home/
 
 # Prerequisites
 
-Before jumping into action, you need to fulfill a few (but essential) prerequisites to follow along with this tutorial. **The steps need to be fulfilled in sequence for you to be able to follow this tutorial (only move to the next step after completing the previous one)**:
+Before jumping into action, you need to fulfill a few (but essential) prerequisites to follow these tutorials. **The steps need to be fulfilled in sequence for you to be able to follow this tutorial (only move to the next step after completing the previous one)**:
 
 1. Firstly, you will need a **Fusion Team** account. The **MFG Data Model API** only works for models in a **Team Hub**, so make sure you have that and not just a **Personal Hub**
 ![Team Hub](/mfgdm-api-tutorial/assets/images/teamhub.png)

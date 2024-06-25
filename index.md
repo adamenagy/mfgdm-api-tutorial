@@ -12,13 +12,13 @@ nav_order: 1
 
 ## Introduction
 
-In this tutorial, we'll cover the first steps in your journey with the **MFG Data Model API** in a quick and simple way. At first, we'll go through the prerequisites required to make everything work, and then we'll have a basic introduction to the **GraphQL** interface used by this API.
+In this tutorial, we'll cover the first steps in your journey with the **MFG Data Model API** in a quick and simple way. At first, we'll go through the prerequisites needed to make everything work, and then we'll have a basic introduction to the **GraphQL** interface used by this API.
 
 Once we get that covered, we'll run from basic queries to more advanced ones, always using the **Explorer**, just like in the image below.
 
 ![sample queries](/mfgdm-api-tutorial/assets/images/getproperties.png)
 
-Don't worry if you're not a full-stack web developer. You won't need that level of expertise to follow up on this tutorial (although it's required to connect with one to build your own app leveraging our APIs).
+Don't worry if you're not a full-stack web developer. You won't need that level of expertise to follow this tutorial (although it's required to connect with one to build your own app leveraging our APIs).
 
 As long as you are familiar with **Fusion** designs and curious about new technologies, you're in good shape to go through the contents shared here.
 
